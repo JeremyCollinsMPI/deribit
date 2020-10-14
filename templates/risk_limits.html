@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V02</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{{ url_for('static',filename='images/icons/favicon.ico') }}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}">	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/animate/animate.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css') }}">
+<!--===============================================================================================-->
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<form method="POST" action="http://103.102.44.216:5000/result">
+	<div class="limiter">
+		<div class="container-table100">
+		<a href="http://103.102.44.216:5000/v1/" class="button">Main</a>
+		<a href="http://103.102.44.216:5000/risk_limits/" class="button">Risk Limits</a>
+			<div class="wrap-table100">
+					<div class="table">
+
+						<div class="row header">
+							<div class="cell">
+								Implied Volatility
+							</div>
+							<div class="cell">
+								Lower
+							</div>
+							<div class="cell">
+							    Upper
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="cell" >
+								No quote
+							</div>
+							<div class="cell" >
+								-
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "No quote upper" value = {{dictionary["No quote upper"]}}>
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" >
+								Best price
+							</div>
+							<div class="cell" >
+								{{dictionary["No quote upper"]}}
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "Best price upper" value = {{dictionary["Best price upper"]}}>
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" >
+								Take all / provide price
+							</div>
+							<div class="cell" >
+								{{dictionary["Best price upper"]}}
+							</div>
+							<div class="cell" >
+								-
+							</div>
+						</div>
+					</div>
+			</div>
+			<div class="wrap-table100">
+					<div class="table">
+
+						<div class="row">
+							<div class="cell" >
+								Max Size
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "Max size" value = {{dictionary["Max size"]}}>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div class="wrap-table100">
+					<div class="table">
+						<div class="row header">
+							<div contenteditable class="cell">
+								Skew
+							</div>
+							<div class="cell">
+								Lower
+							</div>
+							<div class="cell">
+							    Upper
+							</div>
+							<div class="cell">
+							    Rate of skew
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" >
+								Zero skew
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "Zero skew lower" value = {{dictionary["Zero skew lower"]}}>
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "Zero skew upper" value = {{dictionary["Zero skew upper"]}}>
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "Zero skew rate of skew" value = {{dictionary["Zero skew rate of skew"]}}>
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" >
+								Medium
+							</div>
+							<div class="cell" >
+								{{dictionary["Zero skew upper"]}}
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "Medium skew upper" value = {{dictionary["Medium skew upper"]}}>
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "Medium skew rate of skew" value = {{dictionary["Medium skew rate of skew"]}}>
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="cell" >
+								Fast
+							</div>
+							<div class="cell" >
+								{{dictionary["Medium skew upper"]}}
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "Fast skew upper" value = {{dictionary["Fast skew upper"]}}>
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "Fast skew rate of skew" value = {{dictionary["Fast skew rate of skew"]}}>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div class="wrap-table100">
+					<div class="table">
+						<div class="row header">
+							<div contenteditable class="cell">
+								Delta Hedging
+							</div>
+							<div class="cell">
+								Lower
+							</div>
+							<div class="cell">
+							    Upper
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" >
+								No quote
+							</div>
+							<div class="cell" >
+								-
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "No quote delta hedging upper" value = {{dictionary["No quote delta hedging upper"]}}>
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" >
+								Scalp
+							</div>
+							<div class="cell" >
+								{{dictionary["No quote delta hedging upper"]}}
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "Scalp delta hedging upper" value = {{dictionary["Scalp delta hedging upper"]}}>
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" >
+								Mid price
+							</div>
+							<div class="cell" >
+								{{dictionary["Scalp delta hedging upper"]}}
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "Mid price delta hedging upper" value = {{dictionary["Mid price delta hedging upper"]}}>
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" >
+								1 tic away
+							</div>
+							<div class="cell" >
+								{{dictionary["Mid price delta hedging upper"]}}
+							</div>
+							<div class="cell" >
+								<input type = "text" name = "1 tic away delta hedging upper" value = {{dictionary["1 tic away delta hedging upper"]}}>
+							</div>
+						</div>
+						<div class="row">
+							<div class="cell" >
+								Take price
+							</div>
+							<div class="cell" >
+								{{dictionary["1 tic away delta hedging upper"]}}
+							</div>
+							<div class="cell" >
+								-
+							</div>
+						</div>
+					</div>
+				</div>
+				
+		</div>
+	</div>
+
+
+<input type="submit" style="position: absolute; left: -9999px"/>
+</form>
+
+<!--===============================================================================================-->	
+<!-- 
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+ -->
+<!--===============================================================================================-->
+<!-- 
+	<script src="vendor/bootstrap/js/popper.js"></script>
+ -->
+<!-- 
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+ -->
+<!--===============================================================================================-->
+<!-- 
+	<script src="vendor/select2/select2.min.js"></script>
+ -->
+<!--===============================================================================================-->
+<!-- 
+	<script src="js/main.js"></script>
+ -->
+
+</body>
+</html>

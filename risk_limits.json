@@ -1,0 +1,16 @@
+{
+	"No quote upper": 2,
+	"Best price upper": 5,
+	"Max size": 10,
+	"Zero skew lower": 0,
+	"Zero skew upper": 5000,
+	"Zero skew rate of skew": 0,
+	"Medium skew upper": 20000,
+	"Medium skew rate of skew": 0.0005,
+	"Fast skew upper": 60000,
+	"Fast skew rate of skew": 0.001,
+	"No quote delta hedging upper": 2000,
+	"Scalp delta hedging upper": 5000,
+	"Mid price delta hedging upper": 10000,
+	"1 tic away delta hedging upper": 15000
+}
