@@ -1,10 +1,3 @@
 **Deribit Trading Model and UI**
 
-UI:
-
-<img src="https://github.com/JeremyCollinsMPI/deribit/blob/master/1.png">
-
-
-Risk limits:
-
-<img src="https://github.com/JeremyCollinsMPI/deribit/blob/master/2.png">
+Functions for querying deribit and placing orders, using a model specified in model.py.  
