@@ -7,10 +7,6 @@ from test import *
 
 app = Flask(__name__)
 
-# @app.route('/<string:page_name>/')
-# def render_static(page_name):
-#     return render_template('%s.html' % page_name, variable = '1')
-
 @app.route('/v1/')
 def render_static():
     dictionary = prepare_values(simulated=True)
@@ -49,9 +45,7 @@ def result():
       file = open('risk_limits.json', 'w')
       json.dump(result, file)
       file.close()
-#       return 'moose'
-#       sleep(1)
-      return redirect('http://103.102.44.216:5000/risk_limits/')
+      return redirect(home)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
